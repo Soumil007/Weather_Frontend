@@ -9,7 +9,7 @@ export const getWeather = async(props) =>{
       icon:""
     };
     try{
-      const res = await axios.post("http://localhost:3000",{cityname:city});
+      const res = await axios.post("https://weatherappserverreact.herokuapp.com/",{cityname:city});
       
       if(res.status===200){
         weather.temp = res.data.temperature;
