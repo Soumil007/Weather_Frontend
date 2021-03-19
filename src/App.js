@@ -7,7 +7,7 @@ function App() {
 
   const styles = {
     centerDiv : {
-      backgroundColor:"cyan",
+      // backgroundColor:"cyan",
       color:"cornflowerblue",
       textAlign:"center",
       minHeight:"500px"
@@ -77,7 +77,7 @@ function App() {
         city={city}
       /> */}
       {temp!==null?<>
-        <h1>{temp}&deg;C:</h1>
+        <h1>{temp}&deg;C</h1>
         <h2>{desc}</h2>
         <img src={icon} alt="icon"></img>
       </>:""}  

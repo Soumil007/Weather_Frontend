@@ -17,7 +17,7 @@ function GetYourLocation(){
             marginTop:"30px"
         },
         centerDiv : {
-            backgroundColor:"cyan",
+            // backgroundColor:"cyan",
             color:"cornflowerblue",
             textAlign:"center",
             minHeight:"500px"
@@ -49,12 +49,13 @@ function GetYourLocation(){
     }
     async function getLocation(){
     const location  = await axios.post("http://localhost:3000/weather",{lat:latitude,long:longitude});
+    getWthr(location.data.geocodedCity)
     setLoc(location.data.geocodedCity);
     // console.log(location.data.geocodedCity);
     // console.log(loc);
-    if(loc!==""){
-        getWthr(loc);
-    }
+    // if(loc!==""){
+    //     getWthr(loc);
+    // }
     
   }
 //   console.log(loc);
@@ -65,7 +66,11 @@ function GetYourLocation(){
         <h1>Longitude:{longitude}</h1> */}
         {loc!==""?
             <>
-                <h1>Your City is : {loc}</h1>
+                {/* <h1>Your City is : {loc}</h1> */}
+                <h1>Weather Details in {loc}</h1>
+                <h1>{temp}&deg;C</h1>
+                <h2>{desc}</h2>
+                <img src={icon} alt="icon" />
             </>
         :""}
     </div>
