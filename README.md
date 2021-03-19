@@ -5,10 +5,10 @@ This is the just the front-end
 
 #usePosition to generate and access user location details
 
-Here  API
+Here  API <br> 
 I have used here api and end point to reversegeocode the lat and long to get hold of the city name
 
-OpenWeatherMap Api
+OpenWeatherMap Api<br>
 used openweathermapapi to get the weather details
 
 
