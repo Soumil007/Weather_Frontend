@@ -29,10 +29,6 @@ function GetYourLocation(){
     const {
         latitude,
         longitude,
-        speed,
-        timestamp,
-        accuracy,
-        error,
     } = usePosition(watch);
 
     const [temp,setTemp] = useState(null);
@@ -48,16 +44,10 @@ function GetYourLocation(){
         
     }
     async function getLocation(){
-    const location  = await axios.post("http://localhost:3000/weather",{lat:latitude,long:longitude});
-    getWthr(location.data.geocodedCity)
-    setLoc(location.data.geocodedCity);
-    // console.log(location.data.geocodedCity);
-    // console.log(loc);
-    // if(loc!==""){
-    //     getWthr(loc);
-    // }
-    
-  }
+        const location  = await axios.post("http://localhost:3000/weather",{lat:latitude,long:longitude});
+        getWthr(location.data.geocodedCity)
+        setLoc(location.data.geocodedCity);    
+    }
 //   console.log(loc);
     
   return <div style={styles.centerDiv} >
