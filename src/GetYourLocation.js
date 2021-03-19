@@ -44,7 +44,7 @@ function GetYourLocation(){
         
     }
     async function getLocation(){
-        const location  = await axios.post("https://weatherappserverreact.herokuapp.com//weather",{lat:latitude,long:longitude});
+        const location  = await axios.post("https://weatherappserverreact.herokuapp.com/weather",{lat:latitude,long:longitude});
         getWthr(location.data.geocodedCity)
         setLoc(location.data.geocodedCity);    
     }
